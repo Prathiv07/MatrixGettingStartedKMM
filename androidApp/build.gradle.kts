@@ -55,7 +55,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "MatrixGettingStartedKMM"
-                version = "4.2"
+                version = "1.0.0"
                 from(components["release"])
             }
         }
