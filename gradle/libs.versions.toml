@@ -1,18 +1,20 @@
 [versions]
 agp = "8.5.2"
-kotlin = "2.0.0"
-compose = "1.6.8"
+kotlin = "2.0.10"
+compose = "1.6.10"
 compose-material3 = "1.2.1"
 androidx-activityCompose = "1.9.1"
+
 trixnity = "4.6.1"
 koin = "3.5.6"
 ktor = "2.3.12"
-serialization = "1.6.3"
-composeNavigation = "2.8.0-beta07"
+serialization = "1.7.1"
+composeNavigation = "2.8.0-rc01"
 kotlinxCoroutinesCore = "1.8.1"
 lifecycleViewmodelKtx = "2.8.4"
 multiplatform-settings = "1.0.0"
-media3Common = "1.4.0"
+media3Common = "1.4.1"
+coilCompose = "2.7.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -45,6 +47,9 @@ androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-view
 
 multiplatform-settings = { module = "com.russhwolf:multiplatform-settings", version.ref = "multiplatform-settings" }
 androidx-media3-common = { group = "androidx.media3", name = "media3-common", version.ref = "media3Common" }
+
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

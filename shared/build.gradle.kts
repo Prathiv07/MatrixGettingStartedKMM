@@ -1,10 +1,12 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    `maven-publish`
 }
 
 kotlin {
     androidTarget {
+        publishLibraryVariants("release")
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
@@ -60,4 +62,18 @@ android {
 }
 dependencies {
     implementation(libs.androidx.media3.common)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                groupId = "com.github.Prathiv07"
+                artifactId = "shared"
+                version = "4.2"
+                from(components["kotlin"])
+            }
+
+        }
+    }
 }

@@ -1,20 +1,16 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlinxSerialization)
-
+    `maven-publish`
 }
 
 android {
     namespace = "com.kobil.matrixgettingstartedkmm.android"
     compileSdk = 35
     defaultConfig {
-        applicationId = "com.kobil.matrixgettingstartedkmm.android"
         minSdk = 24
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
     }
     buildFeatures {
         compose = true
@@ -51,4 +47,17 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
 
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                groupId = "com.github.Prathiv07"
+                artifactId = "MatrixGettingStartedKMM"
+                version = "4.2"
+                from(components["release"])
+            }
+        }
+    }
 }
