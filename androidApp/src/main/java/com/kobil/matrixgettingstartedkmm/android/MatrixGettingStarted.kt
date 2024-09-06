@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -92,7 +93,11 @@ fun MatrixGettingStartedKMMApp(
                     Text(text = "Login At matrix.org")
                 }
             }
-            Text(text = "Credentials are hardcoded")
+            Text(
+                modifier = Modifier
+                    .padding(horizontal = 20.dp),
+                text = "Credentials are hardcoded and login session will be created with successful login"
+            )
             Spacer(modifier = Modifier.height(10.dp))
             Text(text = "Logged in devices Id : $deviceId")
 
