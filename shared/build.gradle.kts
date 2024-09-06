@@ -70,7 +70,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "shared"
-                version = "1.0.0"
+                version = "1.0.1"
                 from(components["kotlin"])
             }
 

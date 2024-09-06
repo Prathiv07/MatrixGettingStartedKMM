@@ -37,7 +37,7 @@ class MatrixGettingStarted : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyApplicationTheme {
-                MatrixGettingStartedKMMApp(lifecycleScope,this)
+                MatrixGettingStartedKMMApp(lifecycleScope, this)
             }
         }
     }
@@ -45,7 +45,10 @@ class MatrixGettingStarted : ComponentActivity() {
 
 
 @Composable
-fun MatrixGettingStartedKMMApp(lifecycleScope: CoroutineScope, context: Context) {
+fun MatrixGettingStartedKMMApp(
+    lifecycleScope: CoroutineScope,
+    context: Context
+) {
     val platformModule = module {
         single {
             PlatformContextProvider(context)
@@ -77,7 +80,7 @@ fun MatrixGettingStartedKMMApp(lifecycleScope: CoroutineScope, context: Context)
                     deviceId = MatrixManager.login(
                         server = "matrix.org",
                         username = "prathiv1",
-                        password = "Prathiv@dev123",
+                        password = "Kobiltest1",
                     )
                     inProgress = false
                     Log.d("SDK", deviceId ?: "Unable to login")
@@ -86,11 +89,12 @@ fun MatrixGettingStartedKMMApp(lifecycleScope: CoroutineScope, context: Context)
                 if (inProgress) {
                     CircularProgressIndicator()
                 } else {
-                    Text(text = "Check Matrix")
+                    Text(text = "Login At matrix.org")
                 }
             }
+            Text(text = "Credentials are hardcoded")
             Spacer(modifier = Modifier.height(10.dp))
-            Text(text = deviceId.toString())
+            Text(text = "Logged in devices Id : $deviceId")
 
         }
 
